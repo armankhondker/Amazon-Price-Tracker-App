@@ -5,8 +5,13 @@ URL = 'https://www.amazon.com/LG-UltraFine-International-Certified-Refurbished/d
 
 headers = {"User-Agent": 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'}
 
-page = requests.get(URL, headers = headers)
+page = requests.get(URL, headers = headers) #get the data from the webpage
 
-soup = BeautifulSoup(page.content, 'html.parser')
+soup1 = BeautifulSoup(page.content, 'html.parser') #get the html code made with javascript
+soup2 = BeautifulSoup(soup1.prettify(), "html.parser")  #convert to proper format 
 
-print(soup.prettify)
+title = soup2.find(id="productTitle").get_text()   #grab the product title 
+
+print(title.strip())
+
+#print(soup.prettify)
