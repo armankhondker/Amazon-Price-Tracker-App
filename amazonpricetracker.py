@@ -33,9 +33,8 @@ def send_email():
 
     subject = 'Price fell down!'  #subject of email
     body = 'Check the following amazon link' + URL
-
-    msg = f("Subject: {subject}\n\n{body})
-    server.sendmail('bluespoose@gmail.com' , 'armankhondker@gmail.com', msg) #send email from bluespoose to my official gmail
+    msg = "Subject: {subject}\n\n{body}"
+    server.sendmail('bluespoose@gmail.com' , 'armankhondsker@gmail.com', msg) #send email from bluespoose to my official gmail
     server.quit()
     print("Email has been sent")
 
